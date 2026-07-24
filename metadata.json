@@ -1,0 +1,6 @@
+{
+  "name": "Folo",
+  "description": "Coaching de performance pour dirigeants & équipes au Burkina Faso et en Afrique de l'Ouest",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
