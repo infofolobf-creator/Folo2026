@@ -1,6 +1,6 @@
 {
-  "name": "Folo",
-  "description": "Coaching de performance pour dirigeants & équipes au Burkina Faso et en Afrique de l'Ouest",
+  "name": "FOLO Platform V2",
+  "description": "Plateforme SaaS intelligente de Leadership, Diagnostics IA, Calculateurs de ROI, CRM & Growth pour Dirigeants et Organisations en Afrique Francophone (Bobo-Dioulasso & UEMOA)",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
