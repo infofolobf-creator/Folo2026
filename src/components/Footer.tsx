@@ -22,7 +22,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenRDVModal }
                 F
               </div>
               <div>
-                <span className="font-display font-bold text-xl text-white tracking-wider">FOLO PLATFORM V2</span>
+                <span className="font-display font-bold text-xl text-white tracking-wider">FOLO EXECUTIVE HUB</span>
                 <p className="text-[10px] text-amber-400 font-mono uppercase">Executive Leadership & AI Hub</p>
               </div>
             </div>
@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenRDVModal }
               </li>
               <li>
                 <button onClick={() => setCurrentView('crm')} className="hover:text-amber-400 transition-colors">
-                  CRM & Connecteur Lead Factory
+                  Espace Suivi & Organisations
                 </button>
               </li>
               <li>
@@ -138,7 +138,7 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenRDVModal }
 
         {/* Bottom Legal bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/40">
-          <p>© {new Date().getFullYear()} FOLO Platform V2. Tous droits réservés. Bobo-Dioulasso, Burkina Faso.</p>
+          <p>© {new Date().getFullYear()} FOLO - Executive Leadership & IA. Tous droits réservés. Bobo-Dioulasso, Burkina Faso.</p>
           <div className="flex items-center gap-4 text-[11px]">
             <span className="flex items-center gap-1"><ShieldCheck className="w-3.5 h-3.5 text-amber-400" /> Sécurité & Confidentialité</span>
             <span>•</span>

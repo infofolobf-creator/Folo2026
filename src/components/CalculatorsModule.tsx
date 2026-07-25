@@ -474,7 +474,7 @@ export const CalculatorsModule: React.FC<CalculatorsModuleProps> = ({ onOpenRDVM
                   <h3 className="text-xl font-bold font-display text-white mt-0.5">{result.title}</h3>
                 </div>
                 <span className="text-xs px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 font-bold">
-                  Simulateur V2
+                  Estimation Certifiée FOLO
                 </span>
               </div>
 

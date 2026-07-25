@@ -28,12 +28,12 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setCurrentView, onO
 
   const navItems: { id: ModuleView; label: string; icon: React.ReactNode; badge?: string }[] = [
     { id: 'site', label: 'Accueil', icon: <Briefcase className="w-4 h-4" /> },
-    { id: 'diagnostics', label: 'Diagnostics IA', icon: <Sparkles className="w-4 h-4 text-amber-400" />, badge: '8 ' },
+    { id: 'diagnostics', label: 'Diagnostics IA', icon: <Sparkles className="w-4 h-4 text-amber-400" />, badge: '8 domaines' },
     { id: 'calculators', label: 'Calculateurs ROI', icon: <Calculator className="w-4 h-4 text-emerald-400" /> },
-    { id: 'assistant', label: 'Assistant IA', icon: <Bot className="w-4 h-4 text-blue-400" />, badge: 'Live' },
-    { id: 'crm', label: 'CRM & Lead Factory', icon: <Users className="w-4 h-4 text-purple-400" /> },
+    { id: 'assistant', label: 'Conseiller IA', icon: <Bot className="w-4 h-4 text-blue-400" />, badge: '24/7' },
+    { id: 'crm', label: 'Espace Dirigeants', icon: <Users className="w-4 h-4 text-purple-400" /> },
     { id: 'dashboard', label: 'Tableau de Bord', icon: <BarChart3 className="w-4 h-4 text-indigo-400" /> },
-    { id: 'resources', label: 'Guides & Blog', icon: <BookOpen className="w-4 h-4" /> },
+    { id: 'resources', label: 'Ressources & Guides', icon: <BookOpen className="w-4 h-4" /> },
   ];
 
   const handleNavClick = (view: ModuleView) => {
@@ -93,9 +93,9 @@ export const Header: React.FC<HeaderProps> = ({ currentView, setCurrentView, onO
           </div>
           <div>
             <div className="font-display font-bold text-lg text-white tracking-wider flex items-center gap-1.5 leading-none">
-              FOLO <span className="text-amber-400 text-xs px-1.5 py-0.5 rounded bg-amber-400/10 border border-amber-400/30">V2</span>
+              FOLO <span className="text-amber-400 text-xs px-2 py-0.5 rounded bg-amber-400/10 border border-amber-400/30 uppercase tracking-widest font-mono">EXECUTIVE</span>
             </div>
-            <p className="text-[10px] text-white/50 tracking-wider font-mono mt-0.5 uppercase">Platform & Leadership Hub</p>
+            <p className="text-[10px] text-white/50 tracking-wider font-mono mt-0.5 uppercase">Leadership & IA Hub</p>
           </div>
         </div>
 

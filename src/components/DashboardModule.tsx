@@ -57,7 +57,7 @@ export const DashboardModule: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10 border-b border-white/10 pb-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 mb-3 text-xs font-semibold uppercase tracking-wider">
-              <BarChart3 className="w-3.5 h-3.5" /> Tableau de Bord FOLO Platform V2
+              <BarChart3 className="w-3.5 h-3.5" /> Tableaux de Bord FOLO Performance
             </div>
             <h2 className="heading-lg text-2xl sm:text-4xl font-bold font-display">
               Analytique & Performance de la Plateforme

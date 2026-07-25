@@ -25,7 +25,10 @@ export const RDVModal: React.FC<RDVModalProps> = ({ isOpen, onClose }) => {
     if (!fullName || !email) return;
 
     try {
-      await fetch('/api/crm/leads', {
+      const city = preferredLocation === 'bobo' ? 'Bobo-Dioulasso' : preferredLocation === 'ouaga' ? 'Ouagadougou' : 'Visioconférence';
+      
+      // Sync with FOLO Core Leads
+      const leadRes = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -34,13 +37,32 @@ export const RDVModal: React.FC<RDVModalProps> = ({ isOpen, onClose }) => {
           phone,
           company,
           role,
-          city: preferredLocation === 'bobo' ? 'Bobo-Dioulasso' : preferredLocation === 'ouaga' ? 'Ouagadougou' : 'Visioconférence',
-          notes: `RDV Stratégique demandé pour le ${preferredDate} à ${preferredTime}. Sujet: ${topic}`
+          country: 'Burkina Faso',
+          source: 'FOLO Executive Hub (Modal RDV)',
+          interest: topic
         })
       });
+      const leadData = await leadRes.json();
+
+      // Sync with FOLO Core Appointments
+      await fetch('/api/appointments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          leadId: leadData?.leadId || 'lead_exec_rdv',
+          fullName,
+          email,
+          company,
+          date: preferredDate || new Date().toISOString().split('T')[0],
+          timeSlot: preferredTime || '10:00 GMT',
+          topic,
+          advisorNote: `Format: ${city}`
+        })
+      });
+
       setIsSuccess(true);
     } catch (err) {
-      console.error(err);
+      console.error("Erreur lors de l'enregistrement du RDV FOLO Core:", err);
       setIsSuccess(true);
     }
   };

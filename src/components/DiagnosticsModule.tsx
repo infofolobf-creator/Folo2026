@@ -326,7 +326,7 @@ export const DiagnosticsModule: React.FC<DiagnosticsModuleProps> = ({ onOpenPDFM
                   <h3 className="text-2xl sm:text-3xl font-bold font-display text-white mt-2">
                     {activeConfig.title}
                   </h3>
-                  <p className="text-xs text-white/60 mt-1">Calculé selon la méthodologie d'évaluation FOLO V2 (Bobo-Dioulasso)</p>
+                  <p className="text-xs text-white/60 mt-1">Évaluation selon la méthodologie d'accompagnement FOLO (Bobo-Dioulasso)</p>
                 </div>
 
                 <div className="flex items-center gap-6 bg-white/5 p-4 rounded-xl border border-white/10">
@@ -409,7 +409,7 @@ export const DiagnosticsModule: React.FC<DiagnosticsModuleProps> = ({ onOpenPDFM
                       <Send className="w-4 h-4 text-emerald-400" /> Générer & Recevoir Mon Rapport PDF Personnalisé
                     </h4>
                     <span className="text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-                      Synchro CRM & Lead Factory
+                      Traitement Confidentiel FOLO
                     </span>
                   </div>
 
@@ -502,10 +502,10 @@ export const DiagnosticsModule: React.FC<DiagnosticsModuleProps> = ({ onOpenPDFM
               ) : (
                 <div className="bg-emerald-500/10 border border-emerald-500/30 p-4 rounded-xl text-center space-y-2">
                   <p className="text-xs font-bold text-emerald-400 flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-4 h-4" /> Profil enregistré & synchronisé avec FOLO CRM & Lead Factory !
+                    <CheckCircle2 className="w-4 h-4" /> Profil enregistré & rapport personnalisé prêt !
                   </p>
                   <p className="text-[11px] text-white/70">
-                    Un consultant FOLO de Bobo-Dioulasso étudiera vos réponses.
+                    Un consultant FOLO de Bobo-Dioulasso analysera également vos réponses pour préparer votre échange.
                   </p>
                 </div>
               )}

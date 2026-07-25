@@ -2,14 +2,20 @@ import React, { useState } from 'react';
 import { ModuleView, DiagnosticResult } from './types';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
+import { ChallengesSection } from './components/ChallengesSection';
+import { SolutionsSection } from './components/SolutionsSection';
+import { MethodSection } from './components/MethodSection';
+import { WhyFoloSection } from './components/WhyFoloSection';
+import { OffersSection } from './components/OffersSection';
+import { CommitmentsSection } from './components/CommitmentsSection';
+import { FAQSection } from './components/FAQSection';
+import { FinalCTASection } from './components/FinalCTASection';
 import { DiagnosticsModule } from './components/DiagnosticsModule';
 import { CalculatorsModule } from './components/CalculatorsModule';
 import { AssistantIAModule } from './components/AssistantIAModule';
 import { CRMModule } from './components/CRMModule';
 import { DashboardModule } from './components/DashboardModule';
 import { ResourcesModule } from './components/ResourcesModule';
-import { AboutSection } from './components/AboutSection';
-import { ServicesSection } from './components/ServicesSection';
 import { Footer } from './components/Footer';
 import { RDVModal } from './components/RDVModal';
 import { PDFReportModal } from './components/PDFReportModal';
@@ -46,11 +52,26 @@ export function App() {
               setCurrentView={setCurrentView}
               onOpenRDVModal={() => setIsRDVModalOpen(true)}
             />
-            <ServicesSection
+            <ChallengesSection
+              onOpenRDVModal={() => setIsRDVModalOpen(true)}
+            />
+            <SolutionsSection
               setCurrentView={setCurrentView}
               onOpenRDVModal={() => setIsRDVModalOpen(true)}
             />
-            <AboutSection
+            <MethodSection
+              onOpenRDVModal={() => setIsRDVModalOpen(true)}
+            />
+            <WhyFoloSection
+              onOpenRDVModal={() => setIsRDVModalOpen(true)}
+            />
+            <OffersSection
+              setCurrentView={setCurrentView}
+              onOpenRDVModal={() => setIsRDVModalOpen(true)}
+            />
+            <CommitmentsSection />
+            <FAQSection />
+            <FinalCTASection
               onOpenRDVModal={() => setIsRDVModalOpen(true)}
             />
           </>

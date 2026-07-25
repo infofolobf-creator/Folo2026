@@ -1,6 +1,6 @@
 {
-  "name": "FOLO Platform V2",
-  "description": "Plateforme SaaS intelligente de Leadership, Diagnostics IA, Calculateurs de ROI, CRM & Growth pour Dirigeants et Organisations en Afrique Francophone (Bobo-Dioulasso & UEMOA)",
+  "name": "FOLO - Executive Leadership & Intelligence Artificielle",
+  "description": "Cabinet de référence en Executive Coaching, Formation des Dirigeants et Intégration de l'Intelligence Artificielle pour les Organisations en Afrique Francophone.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

@@ -23,7 +23,7 @@ export const PDFReportModal: React.FC<PDFReportModalProps> = ({ isOpen, onClose,
         {/* Modal Controls */}
         <div className="flex items-center justify-between border-b border-white/10 pb-4 print:hidden">
           <span className="text-xs font-bold text-amber-400 uppercase tracking-wider flex items-center gap-2">
-            <Sparkles className="w-4 h-4" /> Aperçu du Rapport Officiel FOLO V2
+            <Sparkles className="w-4 h-4" /> Aperçu du Rapport Stratégique FOLO
           </span>
 
           <div className="flex items-center gap-3">
@@ -54,8 +54,8 @@ export const PDFReportModal: React.FC<PDFReportModalProps> = ({ isOpen, onClose,
                   F
                 </div>
                 <div>
-                  <h1 className="font-display font-extrabold text-2xl text-black tracking-tight">FOLO PLATFORM V2</h1>
-                  <p className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Executive Coaching & Leadership Hub</p>
+                  <h1 className="font-display font-extrabold text-2xl text-black tracking-tight">FOLO EXECUTIVE HUB</h1>
+                  <p className="text-[10px] text-gray-500 font-mono uppercase tracking-wider">Executive Coaching & Leadership</p>
                 </div>
               </div>
             </div>
@@ -132,7 +132,7 @@ export const PDFReportModal: React.FC<PDFReportModalProps> = ({ isOpen, onClose,
           {/* Footer Signature */}
           <div className="pt-6 border-t border-gray-200 flex justify-between items-end text-[10px] text-gray-500">
             <div>
-              <p className="font-bold text-black">FOLO Platform V2 • Coaching & Formation</p>
+              <p className="font-bold text-black">FOLO Cabinet & Hub • Coaching & Formation des Dirigeants</p>
               <p>Bobo-Dioulasso • Ouagadougou • UEMOA</p>
             </div>
             <div className="text-right">

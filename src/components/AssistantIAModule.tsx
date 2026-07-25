@@ -12,7 +12,7 @@ export const AssistantIAModule: React.FC<AssistantIAModuleProps> = ({ onOpenRDVM
     {
       id: 'msg-1',
       sender: 'assistant',
-      text: "Bonjour et bienvenue sur FOLO Platform V2. Je suis votre Assistant IA dédié au Conseil en Management, Executive Leadership & Transformation IA (Siège à Bobo-Dioulasso, Burkina Faso).\n\nComment puis-je vous guider aujourd'hui dans la performance de votre organisation ?",
+      text: "Bonjour et bienvenue. Je suis votre Conseiller IA dédié à l'Executive Leadership, à la Formation et au Conseil en Management (Siège à Bobo-Dioulasso, Burkina Faso).\n\nComment puis-je vous accompagner dans le développement de vos équipes et de vos dirigeants ?",
       timestamp: 'À l\'instant',
       suggestedActions: [
         { label: '🎯 Évaluer mon Comité de Direction (CODIR)', action: 'start_diagnostic', payload: 'leadership' },
@@ -101,10 +101,10 @@ export const AssistantIAModule: React.FC<AssistantIAModuleProps> = ({ onOpenRDVM
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-400 mb-3 text-xs font-semibold uppercase tracking-wider">
-            <Bot className="w-3.5 h-3.5" /> Assistant IA FOLO V2
+            <Bot className="w-3.5 h-3.5" /> Conseiller IA FOLO
           </div>
           <h2 className="heading-lg text-2xl sm:text-4xl font-bold font-display">
-            Assistant IA de Conseil & Qualification
+            Conseiller Stratégique Executive IA
           </h2>
           <p className="mt-2 text-white/70 text-xs sm:text-sm">
             Posez vos questions sur la gouvernance, le management, le turnover ou la transformation IA de vos équipes.

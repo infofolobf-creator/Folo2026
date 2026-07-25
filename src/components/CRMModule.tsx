@@ -124,13 +124,13 @@ export const CRMModule: React.FC = () => {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-10 border-b border-white/10 pb-6">
           <div>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 mb-3 text-xs font-semibold uppercase tracking-wider">
-              <Users className="w-3.5 h-3.5" /> FOLO CRM & Lead Factory Connector
+              <Users className="w-3.5 h-3.5" /> Espace Suivi & Gestion des Organisations
             </div>
             <h2 className="heading-lg text-2xl sm:text-4xl font-bold font-display">
-              Gestion des Prospects & Pipeline Commercial
+              Suivi des Diagnostics & Projets d'Accompagnement
             </h2>
             <p className="text-xs sm:text-sm text-white/70 mt-1">
-              Synchronisation automatique avec Lead Factory (Burkina Faso & Zone UEMOA).
+              Plateforme sécurisée de gestion des dirigeants et comités de direction (Burkina Faso & Zone UEMOA).
             </p>
           </div>
 
@@ -195,7 +195,7 @@ export const CRMModule: React.FC = () => {
               <h3 className="text-xs font-bold text-white uppercase tracking-wider">
                 Liste des Prospects Qualifiés ({filteredLeads.length})
               </h3>
-              <span className="text-[10px] text-amber-400 font-mono">Algorithme de Scoring FOLO V2</span>
+              <span className="text-[10px] text-amber-400 font-mono">Indice de Maturité Organisationnelle FOLO</span>
             </div>
 
             <div className="divide-y divide-white/5 overflow-x-auto">

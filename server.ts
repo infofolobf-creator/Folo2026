@@ -81,7 +81,106 @@ const leadsStore: any[] = [
 
 // Healthcheck
 app.get("/api/health", (req, res) => {
-  res.json({ status: "ok", platform: "FOLO Platform V2", hq: "Bobo-Dioulasso, Burkina Faso" });
+  res.json({ status: "ok", platform: "FOLO Executive Platform", hq: "Bobo-Dioulasso, Burkina Faso" });
+});
+
+// FOLO Core Integration: Synchronisation des Prospects (POST /api/leads)
+app.post("/api/leads", (req, res) => {
+  const { fullName, email, phone, company, role, source, interest, country } = req.body;
+  const leadId = `lead_exec_${Math.floor(Date.now() / 1000)}_${Math.random().toString(36).substr(2, 6)}`;
+  
+  const newLead = {
+    id: leadId,
+    fullName: fullName || 'Prospect Inconnu',
+    email: email || 'email@prospect.bf',
+    phone: phone || '+226 00 00 00 00',
+    company: company || 'Organisation Partenaire',
+    role: role || 'Dirigeant',
+    country: country || 'Burkina Faso',
+    source: source || 'FOLO Executive Hub',
+    interest: interest || 'Coaching & Diagnostic Stratégique',
+    status: 'diagnostic_done',
+    createdAt: new Date().toISOString()
+  };
+
+  leadsStore.unshift(newLead);
+
+  res.status(200).json({
+    success: true,
+    leadId,
+    message: "Prospect enregistré avec succès dans FOLO Core Vault.",
+    data: newLead
+  });
+});
+
+// FOLO Core Integration: Diagnostics Stratégiques (POST /api/diagnostics)
+app.post("/api/diagnostics", (req, res) => {
+  const { leadId, companyName, diagnosticType, scores, recommendations } = req.body;
+  const diagId = `diag_${Math.floor(Date.now() / 1000)}_${Math.random().toString(36).substr(2, 6)}`;
+
+  res.status(200).json({
+    success: true,
+    diagnosticId: diagId,
+    leadId: leadId || 'lead_exec_default',
+    companyName: companyName || 'Organisation Partenaire',
+    message: "Rapport de diagnostic synchronisé avec FOLO Core.",
+    timestamp: new Date().toISOString()
+  });
+});
+
+// FOLO Core Integration: Prise de Rendez-vous Exécutifs (POST /api/appointments)
+app.post("/api/appointments", (req, res) => {
+  const { leadId, fullName, email, company, date, timeSlot, topic, advisorNote } = req.body;
+  const appointmentId = `apt_${Math.floor(Date.now() / 1000)}_${Math.random().toString(36).substr(2, 6)}`;
+
+  res.status(200).json({
+    success: true,
+    appointmentId,
+    leadId: leadId || 'lead_exec_default',
+    fullName: fullName || 'Dirigeant Partner',
+    email,
+    company,
+    date: date || new Date().toISOString().split('T')[0],
+    timeSlot: timeSlot || '10:00 GMT',
+    topic: topic || 'Entretien Stratégique FOLO',
+    status: 'confirmed',
+    message: "Rendez-vous stratégique enregistré dans le calendrier FOLO Core."
+  });
+});
+
+// FOLO Core Integration: Catalogue des Offres (GET /api/offers)
+app.get("/api/offers", (req, res) => {
+  res.json({
+    success: true,
+    offers: [
+      {
+        id: "offer_executive_starter",
+        name: "FOLO Executive Starter",
+        pricePerMonthEuro: 490,
+        pricePerMonthFCFA: 320000,
+        features: ["Diagnostic Stratégique IA", "Coaching Exécutif Individuel", "Support FOLO Prioritaire"]
+      },
+      {
+        id: "offer_executive_scale",
+        name: "FOLO Executive Scale",
+        pricePerMonthEuro: 1290,
+        pricePerMonthFCFA: 850000,
+        features: ["Accès FOLO Core Vault", "Accompagnement CODIR & Équipes", "SSO Enterprise"]
+      }
+    ]
+  });
+});
+
+// FOLO Core Integration: SSO Token Generation (POST /api/sso/issue-token)
+app.post("/api/sso/issue-token", (req, res) => {
+  const { userId, appSlug } = req.body;
+  const ssoToken = `folo_sso_${appSlug || 'executive'}_${Date.now()}_${Math.random().toString(36).substr(2, 6)}`;
+
+  res.json({
+    success: true,
+    ssoToken,
+    redirectUrl: `/sso-login?token=${ssoToken}`
+  });
 });
 
 // Assistant IA FOLO Endpoint
@@ -109,7 +208,7 @@ Aimeriez-vous planifier un échange stratégique de 30 minutes avec nos experts 
       });
     }
 
-    const systemInstruction = `Tu es l'Assistant IA officiel de FOLO Platform V2 — Cabinet d'Excellence en Executive Coaching, Formation Management & Transformation IA en Afrique Francophone (Siège à Bobo-Dioulasso, Burkina Faso).
+    const systemInstruction = `Tu es le Conseiller IA officiel de FOLO — Cabinet d'Excellence en Executive Coaching, Formation Management & Transformation IA en Afrique Francophone (Siège à Bobo-Dioulasso, Burkina Faso).
 Ton rôle est d'accueillir chaleureusement les dirigeants, DRH, Directeurs Généraux et managers, comprendre leurs besoins (leadership, turnover, IA, performance d'équipe), répondre avec clarté et professionnalisme, et les guider vers :
 - Un diagnostic IA interactif gratuit
 - Un calculateur de ROI
