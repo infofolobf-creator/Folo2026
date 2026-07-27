@@ -208,7 +208,7 @@ export const ResourcesModule: React.FC = () => {
                     className="w-full btn-primary text-xs py-3 rounded-lg font-bold flex items-center justify-center gap-2 mt-2"
                   >
                     <Download className="w-4 h-4 fill-black" />
-                    <span>Télécharger la ressource PDF</span>
+                    <span>Obtenir mon guide PDF gratuit</span>
                   </button>
                 </form>
               ) : (
@@ -218,14 +218,28 @@ export const ResourcesModule: React.FC = () => {
                   </div>
                   <h4 className="text-lg font-bold text-white">Téléchargement Prêt !</h4>
                   <p className="text-xs text-white/70">
-                    Merci {downloadName}. La ressource <strong className="text-amber-400">{downloadModalResource.title}</strong> a été enregistrée.
+                    Merci {downloadName}. Votre document <strong className="text-amber-400">{downloadModalResource.title}</strong> est disponible ci-dessous.
                   </p>
-                  <button
-                    onClick={() => setDownloadModalResource(null)}
-                    className="btn-primary text-xs py-2.5 px-6 rounded-lg font-bold"
-                  >
-                    Fermer & Continuer la navigation
-                  </button>
+                  
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a
+                      href="/Diagnostic_Leadership_Express_FOLO.pdf"
+                      download="Diagnostic_Leadership_Express_FOLO.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary text-xs py-3 px-6 rounded-lg font-bold inline-flex items-center gap-2 shadow-lg shadow-amber-400/20"
+                    >
+                      <Download className="w-4 h-4 fill-black" />
+                      <span>Télécharger le PDF maintenant</span>
+                    </a>
+                    
+                    <button
+                      onClick={() => setDownloadModalResource(null)}
+                      className="px-4 py-3 rounded-lg bg-white/10 hover:bg-white/20 text-white/80 text-xs font-semibold"
+                    >
+                      Fermer
+                    </button>
+                  </div>
                 </div>
               )}
             </div>
