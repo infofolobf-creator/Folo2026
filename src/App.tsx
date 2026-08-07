@@ -19,9 +19,22 @@ import { ResourcesModule } from './components/ResourcesModule';
 import { Footer } from './components/Footer';
 import { RDVModal } from './components/RDVModal';
 import { PDFReportModal } from './components/PDFReportModal';
+import { LePontLandingPage } from './components/LePontLandingPage';
 
 export function App() {
-  const [currentView, setCurrentView] = useState<ModuleView>('site');
+  const [currentView, setCurrentView] = useState<ModuleView>(() => {
+    if (typeof window !== 'undefined') {
+      const urlParams = new URLSearchParams(window.location.search);
+      if (
+        urlParams.get('page') === 'le-pont' ||
+        urlParams.get('page') === 'lepont' ||
+        window.location.pathname.includes('le-pont')
+      ) {
+        return 'lepont';
+      }
+    }
+    return 'site';
+  });
   
   // Modal states
   const [isRDVModalOpen, setIsRDVModalOpen] = useState(false);
@@ -34,6 +47,11 @@ export function App() {
     setPdfLeadData(leadData);
     setIsPDFModalOpen(true);
   };
+
+  // If viewing the standalone Le Pont page, render it cleanly without main header/footer
+  if (currentView === 'lepont') {
+    return <LePontLandingPage onBackToMain={() => setCurrentView('site')} />;
+  }
 
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-white flex flex-col font-body selection:bg-amber-400 selection:text-black">

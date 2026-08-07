@@ -85,6 +85,11 @@ export const Footer: React.FC<FooterProps> = ({ setCurrentView, onOpenRDVModal }
                   Blog & Livres Blancs
                 </button>
               </li>
+              <li>
+                <button onClick={() => setCurrentView('lepont')} className="hover:text-amber-400 transition-colors text-amber-300 font-semibold">
+                  📖 Livre « Le Pont » (Diaspora)
+                </button>
+              </li>
             </ul>
           </div>
 

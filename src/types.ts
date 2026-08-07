@@ -6,7 +6,8 @@ export type ModuleView =
   | 'crm' 
   | 'dashboard' 
   | 'resources'
-  | 'coaching';
+  | 'coaching'
+  | 'lepont';
 
 // Diagnostics
 export type DiagnosticCategory = 
